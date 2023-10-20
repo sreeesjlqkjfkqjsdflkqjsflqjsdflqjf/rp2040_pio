@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.13)
 # note: this must happen before project()
 include(pico_sdk_import.cmake)
 
-project(chrono)
+project(pio)
 enable_language( C CXX ASM )
 
 # initialize the Raspberry Pi Pico SDK
@@ -13,14 +13,14 @@ pico_sdk_init()
 
 # rest of your project
 
-add_executable(chrono
-    chrono.c
+add_executable(pio
+    pio.c
 )
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(chrono pico_stdlib)
+target_link_libraries(pio pico_stdlib)
 
-pico_enable_stdio_usb(chrono 1)
-pico_enable_stdio_uart(chrono 0)
+pico_enable_stdio_usb(pio 1)
+pico_enable_stdio_uart(pio 0)
 # create map/bin/hex/uf2 file in addition to ELF.
-pico_add_extra_outputs(chrono)
+pico_add_extra_outputs(pio)
